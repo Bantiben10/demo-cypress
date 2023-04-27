@@ -4,7 +4,7 @@ export class BasePage {
 
     
     static submit (){
-        cy.contains('Continue').click()
+        cy.get('[type="submit"]').click()
     }
     
 

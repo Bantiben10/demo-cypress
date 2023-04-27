@@ -7,6 +7,16 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+
+Cypress.Commands.add('login', (url, username, password) => {
+    cy.visit(Cypress.env('url'))
+    cy.contains('My Account').click()
+    cy.contains('Login').click()
+    cy.get('#input-email').type(Cypress.env('username'))
+    cy.get('#input-password').type(Cypress.env('password'))
+    cy.get('[type="submit"]').click()
+    
+})
 //
 //
 // -- This is a parent command --
